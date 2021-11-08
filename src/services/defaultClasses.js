@@ -26,10 +26,11 @@ export default {
         'vue-ads-text-sm': true,
     },
     'even/': {
-        'vue-ads-bg-gray-100': true,
+        'vue-ads-bg-gray-100': false,
+        'vue-ads-bg-white': false,
     },
     'odd/': {
-        'vue-ads-bg-white': true,
+        'vue-ads-bg-white': false,
     },
     '0/': {
         'vue-ads-bg-gray-100': false,

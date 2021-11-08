@@ -68,7 +68,7 @@ export default {
 
             if (columns.length > 0) {
                 if (!columns.find(column => column.collapseIcon)) {
-                    Vue.set(columns[0], 'collapseIcon', true);
+                    Vue.set(columns[columns.length - 1], 'collapseIcon', true);
                 }
             }
 
