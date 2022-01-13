@@ -42,7 +42,7 @@
             :call-children="callChildrenFunction"
             :call-temp-rows="callTempRowsFunction"
             :slots="$scopedSlots"
-            :expanded-column="'function'"
+            :expanded-column="expandedColumn"
             @total-filtered-rows-change="totalFilteredRowsChanged"
             @export="exportTable"
             @selection-change="selectionChanged"
@@ -100,6 +100,11 @@ export default {
         rows: {
             type: Array,
             default: () => [],
+        },
+
+        expandedColumn: {
+            type: String,
+            default: '',
         },
 
         filter: {

@@ -15,6 +15,7 @@
             @filter-change="filterChanged"
             @page-change="pageChanged"
             @selection-change="selectionChanged"
+            :expanded-column="'temp'"
             export-name="test"
         >
             <!--&lt;!&ndash; Will be applied on the name column for the rows with an _id of tiger &ndash;&gt;-->
@@ -224,6 +225,12 @@ export default {
             },
         ];
         let columns = [
+            {
+                property: 'temp',
+                title: '',
+                direction: null,
+                filterable: false,
+            },
             {
                 property: 'id',
                 title: 'ID#',
