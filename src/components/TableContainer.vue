@@ -42,6 +42,7 @@
             :call-children="callChildrenFunction"
             :call-temp-rows="callTempRowsFunction"
             :slots="$scopedSlots"
+            :expanded-column="'function'"
             @total-filtered-rows-change="totalFilteredRowsChanged"
             @export="exportTable"
             @selection-change="selectionChanged"

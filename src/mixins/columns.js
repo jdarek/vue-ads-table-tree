@@ -6,6 +6,10 @@ export default {
             type: Array,
             required: true,
         },
+        expandedColumn: {
+            type: String,
+            required: true,
+        },
     },
 
     watch: {
@@ -66,9 +70,11 @@ export default {
                 }
             });
 
+            let index = columns.findIndex(row => row.property === this.expandedColumn);
+
             if (columns.length > 0) {
                 if (!columns.find(column => column.collapseIcon)) {
-                    Vue.set(columns[columns.length - 1], 'collapseIcon', true);
+                    Vue.set(columns[(index != -1 ? index : columns.length - 1)], 'collapseIcon', true);
                 }
             }
 
