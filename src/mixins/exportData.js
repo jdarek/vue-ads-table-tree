@@ -14,9 +14,13 @@ export default {
             this.$emit(
                 'export',
                 {
-                    fields: Object.assign({
-                        '#': '_order',
-                    }, this.exportFields()),
+                    fields: [
+                        {
+                            label: '#',
+                            field: '_order',
+                        },
+                        ...this.exportFields(),
+                    ],
                     data: this.exportData(full ? this.loadedRows : this.sortedRows, full),
                     title: name,
                 }
@@ -24,12 +28,30 @@ export default {
         },
 
         exportFields () {
-            return this.exportColumns
-                .reduce((result, column) => {
-                    result[column.title] = column.property;
+            let temp = this.exportColumns;
+            
+            this.exportColumns.forEach((obj, i) => {
+                let row = {};
+                if(obj.dataFormat) {
+                    row = {
+                        label: obj.title,
+                        field: obj.property,
+                        dataFormat: obj.dataFormat,
+                    };
+                } else {
+                    row = {
+                        label: obj.title,
+                        field: obj.property,
+                    };
+                }
+                
+                temp[i] = row; 
+            });
 
-                    return result;
-                }, {});
+            console.log('aaaaaaaa');
+            console.log(temp);
+
+            return temp;
         },
 
         exportData (rows, full, parent = '') {
