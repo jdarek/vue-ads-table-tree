@@ -19358,8 +19358,6 @@ var es_date_to_string = __webpack_require__("0d03");
 
         temp[i] = row;
       });
-      console.log('aaaaaaaa');
-      console.log(temp);
       return temp;
     },
     exportData: function exportData(rows, full) {

@@ -48,9 +48,6 @@ export default {
                 temp[i] = row; 
             });
 
-            console.log('aaaaaaaa');
-            console.log(temp);
-
             return temp;
         },
 
