@@ -218,6 +218,8 @@ export default {
         exportExcelFile () {
             this.collectExportData ();
             var self = this;
+            console.log('AAAAAAAAA');
+            console.log(this.$refs.testexcel);
             setTimeout(function () { self.$refs.testexcel.exportExcel(); } , 1000);
         },
 

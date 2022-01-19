@@ -13211,6 +13211,55 @@ module.exports = version && +version;
 
 /***/ }),
 
+/***/ "60da":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var DESCRIPTORS = __webpack_require__("83ab");
+var fails = __webpack_require__("d039");
+var objectKeys = __webpack_require__("df75");
+var getOwnPropertySymbolsModule = __webpack_require__("7418");
+var propertyIsEnumerableModule = __webpack_require__("d1e7");
+var toObject = __webpack_require__("7b0b");
+var IndexedObject = __webpack_require__("44ad");
+
+var nativeAssign = Object.assign;
+
+// `Object.assign` method
+// https://tc39.github.io/ecma262/#sec-object.assign
+// should work with symbols and should have deterministic property order (V8 bug)
+module.exports = !nativeAssign || fails(function () {
+  var A = {};
+  var B = {};
+  // eslint-disable-next-line no-undef
+  var symbol = Symbol();
+  var alphabet = 'abcdefghijklmnopqrst';
+  A[symbol] = 7;
+  alphabet.split('').forEach(function (chr) { B[chr] = chr; });
+  return nativeAssign({}, A)[symbol] != 7 || objectKeys(nativeAssign({}, B)).join('') != alphabet;
+}) ? function assign(target, source) { // eslint-disable-line no-unused-vars
+  var T = toObject(target);
+  var argumentsLength = arguments.length;
+  var index = 1;
+  var getOwnPropertySymbols = getOwnPropertySymbolsModule.f;
+  var propertyIsEnumerable = propertyIsEnumerableModule.f;
+  while (argumentsLength > index) {
+    var S = IndexedObject(arguments[index++]);
+    var keys = getOwnPropertySymbols ? objectKeys(S).concat(getOwnPropertySymbols(S)) : objectKeys(S);
+    var length = keys.length;
+    var j = 0;
+    var key;
+    while (length > j) {
+      key = keys[j++];
+      if (!DESCRIPTORS || propertyIsEnumerable.call(S, key)) T[key] = S[key];
+    }
+  } return T;
+} : nativeAssign;
+
+
+/***/ }),
+
 /***/ "6220":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16572,6 +16621,21 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "cca6":
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__("23e7");
+var assign = __webpack_require__("60da");
+
+// `Object.assign` method
+// https://tc39.github.io/ecma262/#sec-object.assign
+$({ target: 'Object', stat: true, forced: Object.assign !== assign }, {
+  assign: assign
+});
+
+
+/***/ }),
+
 /***/ "cdf9":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17982,12 +18046,12 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: ./src/assets/css/tailwind.css
 var tailwind = __webpack_require__("def6");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1f741502-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TableContainer.vue?vue&type=template&id=5e6d8f4c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1f741502-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TableContainer.vue?vue&type=template&id=7a250394&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._t("top",[_c('div',{staticClass:"vue-ads-flex vue-ads-py-3"},[_c('div',{staticClass:"vue-ads-w-3/4"}),_c('div',{staticClass:"vue-ads-w-1/4 vue-ads-flex"},[_c('vue-ads-form',{class:_vm.filterClasses,style:({'min-width': 0})},[_c('vue-ads-form-group',[_c('vue-ads-text',{style:({'min-width': 0}),attrs:{"value":_vm.filter,"placeholder":"Filter..."},on:{"input":_vm.filterChanged}})],1)],1),_c('vue-excel-xlsx',{ref:"testexcel",attrs:{"data":_vm.exportData,"columns":_vm.exportFields,"filename":_vm.exportTitle,"sheetname":'sheetname'}}),_c('button',{staticClass:"vue-ads-text-white vue-ads-p-2 vue-ads-cursor-pointer vue-ads-rounded-sm vue-ads-bg-teal-500",on:{"click":_vm.exportExcelFile}},[_c('i',{staticClass:"fa fa-file-download"})])],1)])],{"filter":_vm.filter,"filterChanged":_vm.filterChanged}),_c('vue-ads-table',{ref:"table",attrs:{"columns":_vm.columns,"rows":_vm.rows,"filter":_vm.debouncedFilter,"selectable":_vm.selectable,"start":_vm.start,"end":_vm.end,"classes":_vm.classes,"call-rows":_vm.callRowsFunction,"call-children":_vm.callChildrenFunction,"call-temp-rows":_vm.callTempRowsFunction,"slots":_vm.$scopedSlots,"expanded-column":_vm.expandedColumn},on:{"total-filtered-rows-change":_vm.totalFilteredRowsChanged,"export":_vm.exportTable,"selection-change":_vm.selectionChanged}}),_vm._t("bottom",[_c('vue-ads-pagination',{attrs:{"total-items":_vm.total,"page":_vm.page,"items-per-page":_vm.itemsPerPage},on:{"page-change":_vm.pageChanged,"range-change":_vm.rangeChanged}})],{"total":_vm.total,"page":_vm.page,"itemsPerPage":_vm.itemsPerPage,"pageChanged":_vm.pageChanged,"rangeChanged":_vm.rangeChanged})],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/TableContainer.vue?vue&type=template&id=5e6d8f4c&
+// CONCATENATED MODULE: ./src/components/TableContainer.vue?vue&type=template&id=7a250394&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.filter.js
 var es_array_filter = __webpack_require__("4de4");
@@ -18316,6 +18380,7 @@ var es_string_iterator = __webpack_require__("3ca3");
 
 
 
+
 /* harmony default export */ var filter = ({
   props: {
     filter: {
@@ -18412,7 +18477,11 @@ var es_string_iterator = __webpack_require__("3ca3");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.join.js
 var es_array_join = __webpack_require__("a15b");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.assign.js
+var es_object_assign = __webpack_require__("cca6");
+
 // CONCATENATED MODULE: ./src/mixins/slots.js
+
 
 
 
@@ -18542,6 +18611,9 @@ var es_array_slice = __webpack_require__("fb6a");
     'vue-ads-border-r': true
   }
 });
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.iterator.js
+var es_array_iterator = __webpack_require__("e260");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.reduce.js
 var es_array_reduce = __webpack_require__("13d5");
 
@@ -18627,6 +18699,8 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 // CONCATENATED MODULE: ./src/services/CSSProcessor.js
+
+
 
 
 
@@ -18883,6 +18957,7 @@ var es_array_splice = __webpack_require__("a434");
 
 
 
+
 /* harmony default export */ var mixins_async = ({
   props: {
     callRows: {
@@ -19048,6 +19123,7 @@ var es_array_splice = __webpack_require__("a434");
 
 
 
+
 /* harmony default export */ var sort = ({
   computed: {
     sortedRows: function sortedRows() {
@@ -19155,6 +19231,7 @@ function _defineProperty(obj, key, value) {
 
 
 
+
 // TODO how to handle grouped data for async data
 /* harmony default export */ var groupBy = ({
   computed: {
@@ -19246,6 +19323,7 @@ function _defineProperty(obj, key, value) {
   }
 });
 // CONCATENATED MODULE: ./src/mixins/flatten.js
+
 
 
 
@@ -19829,6 +19907,7 @@ var ChildrenButton_component = normalizeComponent(
 
 /* harmony default export */ var ChildrenButton = (ChildrenButton_component.exports);
 // CONCATENATED MODULE: ./src/mixins/cell/cell.js
+
 
 
 
@@ -20606,6 +20685,8 @@ var Table_component = normalizeComponent(
     exportExcelFile: function exportExcelFile() {
       this.collectExportData();
       var self = this;
+      console.log('AAAAAAAAA');
+      console.log(this.$refs.testexcel);
       setTimeout(function () {
         self.$refs.testexcel.exportExcel();
       }, 1000);

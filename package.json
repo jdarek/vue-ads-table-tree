@@ -19,7 +19,7 @@
     ],
     "scripts": {
         "build": "vue-cli-service build",
-        "build:bundle": "vue-cli-service build --target lib --name vue-ads-table-tree ./src/index.js",
+        "build:bundle": "vue-cli-service build --target lib --name vue-ads-table-tree ./src/index.js --skip-plugins @vue/cli-plugin-eslint",
         "lint": "vue-cli-service lint",
         "package-lint": "prettier-package-json --write --tab-width=4 ./package.json",
         "serve": "vue-cli-service serve",
