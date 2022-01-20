@@ -18055,12 +18055,12 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: ./src/assets/css/tailwind.css
 var tailwind = __webpack_require__("def6");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"f0ff3d26-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TableContainer.vue?vue&type=template&id=7a250394&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"f0ff3d26-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TableContainer.vue?vue&type=template&id=5e6d8f4c&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._t("top",[_c('div',{staticClass:"vue-ads-flex vue-ads-py-3"},[_c('div',{staticClass:"vue-ads-w-3/4"}),_c('div',{staticClass:"vue-ads-w-1/4 vue-ads-flex"},[_c('vue-ads-form',{class:_vm.filterClasses,style:({'min-width': 0})},[_c('vue-ads-form-group',[_c('vue-ads-text',{style:({'min-width': 0}),attrs:{"value":_vm.filter,"placeholder":"Filter..."},on:{"input":_vm.filterChanged}})],1)],1),_c('vue-excel-xlsx',{ref:"testexcel",attrs:{"data":_vm.exportData,"columns":_vm.exportFields,"filename":_vm.exportTitle,"sheetname":'sheetname'}}),_c('button',{staticClass:"vue-ads-text-white vue-ads-p-2 vue-ads-cursor-pointer vue-ads-rounded-sm vue-ads-bg-teal-500",on:{"click":_vm.exportExcelFile}},[_c('i',{staticClass:"fa fa-file-download"})])],1)])],{"filter":_vm.filter,"filterChanged":_vm.filterChanged}),_c('vue-ads-table',{ref:"table",attrs:{"columns":_vm.columns,"rows":_vm.rows,"filter":_vm.debouncedFilter,"selectable":_vm.selectable,"start":_vm.start,"end":_vm.end,"classes":_vm.classes,"call-rows":_vm.callRowsFunction,"call-children":_vm.callChildrenFunction,"call-temp-rows":_vm.callTempRowsFunction,"slots":_vm.$scopedSlots,"expanded-column":_vm.expandedColumn},on:{"total-filtered-rows-change":_vm.totalFilteredRowsChanged,"export":_vm.exportTable,"selection-change":_vm.selectionChanged}}),_vm._t("bottom",[_c('vue-ads-pagination',{attrs:{"total-items":_vm.total,"page":_vm.page,"items-per-page":_vm.itemsPerPage},on:{"page-change":_vm.pageChanged,"range-change":_vm.rangeChanged}})],{"total":_vm.total,"page":_vm.page,"itemsPerPage":_vm.itemsPerPage,"pageChanged":_vm.pageChanged,"rangeChanged":_vm.rangeChanged})],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/TableContainer.vue?vue&type=template&id=7a250394&
+// CONCATENATED MODULE: ./src/components/TableContainer.vue?vue&type=template&id=5e6d8f4c&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.filter.js
 var es_array_filter = __webpack_require__("4de4");
@@ -20694,8 +20694,6 @@ var Table_component = normalizeComponent(
     exportExcelFile: function exportExcelFile() {
       this.collectExportData();
       var self = this;
-      console.log('AAAAAAAAA');
-      console.log(this.$refs.testexcel);
       setTimeout(function () {
         self.$refs.testexcel.exportExcel();
       }, 1000);
