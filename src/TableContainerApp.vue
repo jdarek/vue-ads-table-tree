@@ -341,7 +341,12 @@ export default {
 
     methods: {
         dateFormat (value) {
-            return (value && value != null && value != '' && value != undefined ? new Date(value * 1000) : '');
+            return (value && value != null && value != '' && value != undefined ? new Date(new Date(value * 1000).toLocaleString(
+                'en-us', 
+                { 
+                    timeZone: 'Etc/UTC',
+                }
+            )) : '');
         },
         sleep (ms) {
             return new Promise(resolve => setTimeout(resolve, ms));

@@ -28,9 +28,9 @@ export default {
         },
 
         exportFields () {
-            let temp = this.exportColumns;
-            
-            this.exportColumns.forEach((obj, i) => {
+            let temp = JSON.parse(JSON.stringify(this.exportColumns));
+
+            temp.forEach((obj, i) => {
                 let row = {};
                 if(obj.dataFormat) {
                     row = {
@@ -45,7 +45,7 @@ export default {
                     };
                 }
                 
-                temp[i] = row; 
+                temp[i] = row;
             });
 
             return temp;
