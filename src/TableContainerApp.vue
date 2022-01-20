@@ -70,7 +70,6 @@ export default {
                 id: '5421',
                 since: '2011/04/25',
                 budget: 320800,
-                date: 1634196132,
                 _selectable: true,
                 _children: [
                     {
@@ -80,7 +79,6 @@ export default {
                         id: '8422',
                         since: '2011/07/25',
                         budget: 170750,
-                        date: 1634276751,
                     },
                     {
                         name: 'Airi Satou',
@@ -89,7 +87,6 @@ export default {
                         id: '5407',
                         since: '2008/11/28',
                         budget: 162700,
-                        date: 1634276751,
                         _showChildren: true,
                         _children: [
                             {
@@ -99,7 +96,6 @@ export default {
                                 id: '1721',
                                 since: '2009/04/10',
                                 budget: 237500,
-                                date: 1634276751,
                             },
                             {
                                 name: 'Bradley Greer',
@@ -108,7 +104,6 @@ export default {
                                 id: '2558',
                                 since: '2012/10/13',
                                 budget: 132000,
-                                date: 1634276751,
                                 _selectable: false,
                             },
                         ],
@@ -120,7 +115,6 @@ export default {
                         id: '1562',
                         since: '2009/01/12',
                         budget: 86000,
-                        date: 1634276751,
                     },
                 ],
             },
@@ -131,7 +125,6 @@ export default {
                 id: '8422',
                 since: '2011/07/25',
                 budget: 170750,
-                date: null,
                 _hasChildren: false,
             },
             {
@@ -141,7 +134,6 @@ export default {
                 id: '1562',
                 since: '2009/01/12',
                 budget: 86000,
-                date: 0,
             },
             {
                 name: 'Cedric Kelly',
@@ -150,7 +142,6 @@ export default {
                 id: '6224',
                 since: '2012/03/29',
                 budget: 433060,
-                date: 1634276751,
             },
             {
                 name: 'Airi Satou',
@@ -159,7 +150,6 @@ export default {
                 id: '5407',
                 since: '2008/11/28',
                 budget: 162700,
-                date: 1634276751,
             },
             {
                 name: 'Brielle Williamson',
@@ -168,7 +158,6 @@ export default {
                 id: '4804',
                 since: '2012/12/02',
                 budget: 372000,
-                date: 1634276751,
             },
             {
                 name: 'Herrod Chandler',
@@ -177,7 +166,6 @@ export default {
                 id: '9608',
                 since: '2012/08/06',
                 budget: 137500,
-                date: 1634276751,
             },
             {
                 name: 'Rhona Davidson',
@@ -186,7 +174,6 @@ export default {
                 id: '6200',
                 since: '2010/10/14',
                 budget: 327900,
-                date: 1634276751,
             },
             {
                 name: 'Colleen Hurst',
@@ -195,7 +182,6 @@ export default {
                 id: '2360',
                 since: '2009/09/15',
                 budget: 205500,
-                date: 1634276751,
             },
             {
                 name: 'Sonya Frost',
@@ -204,7 +190,6 @@ export default {
                 id: '1667',
                 since: '2008/12/13',
                 budget: 103600,
-                date: 1634276751,
             },
             {
                 name: 'Unity Butler',
@@ -213,7 +198,6 @@ export default {
                 id: '5384',
                 since: '2009/12/09',
                 budget: 85675,
-                date: 1634276751,
             },
             {
                 name: 'Howard Hatfield',
@@ -222,7 +206,6 @@ export default {
                 id: '7031',
                 since: '2008/12/16',
                 budget: 164500,
-                date: 1634276753,
             },
             {
                 name: 'Hope Fuentes',
@@ -231,7 +214,6 @@ export default {
                 id: '6318',
                 since: '2010/02/12',
                 budget: 109850,
-                date: 1634276752,
             },
             {
                 name: 'Vivian Harrell',
@@ -240,7 +222,6 @@ export default {
                 id: '9422',
                 since: '2009/02/14',
                 budget: 452500,
-                date: 1634276751,
             },
         ];
         let columns = [
@@ -303,13 +284,6 @@ export default {
                     }
                 },
             },
-            {
-                property: 'date',
-                title: 'Date',
-                direction: null,
-                filterable: true,
-                dataFormat: this.dateFormat,
-            },
         ];
         classes['1_/5'] = (row, column) => {
             if (row.budget < 100000) {
@@ -339,9 +313,6 @@ export default {
     },
 
     methods: {
-        dateFormat (value) {
-            return (value && value != null && value != '' && value != undefined ? new Date(value * 1000) : '');
-        },
         sleep (ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         },

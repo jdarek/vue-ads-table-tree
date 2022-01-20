@@ -15,22 +15,16 @@
                             <vue-ads-text :value="filter" placeholder="Filter..." @input="filterChanged" :style="{'min-width': 0}"/>
                         </vue-ads-form-group>
                     </vue-ads-form>
-                    <vue-excel-xlsx 
-                        ref="testexcel"
+                    <vue-json-excel
+                        v-if="exportName"
                         :data="exportData"
-                        :columns="exportFields"
-                        :filename="exportTitle"
-                        :sheetname="'sheetname'"
-                    >
-                    </vue-excel-xlsx>
-                    <button
-                        @click="exportExcelFile"
+                        :fields="exportFields"
+                        :name="`${exportTitle}.xls`"
+                        :before-generate="collectExportData"
                         class="vue-ads-text-white vue-ads-p-2 vue-ads-cursor-pointer vue-ads-rounded-sm vue-ads-bg-teal-500"
                     >
-                        <i 
-                            class="fa fa-file-download">
-                        </i>
-                    </button>
+                        <i class="fa fa-file-download"></i>
+                    </vue-json-excel>
                 </div>
             </div>
 
@@ -78,6 +72,7 @@ import {
     VueAdsText,
 } from 'vue-ads-form-builder';
 import VueAdsPagination from 'vue-ads-pagination';
+import VueJsonExcel from 'vue-json-excel';
 import debounce from '../services/debounce';
 
 import VueAdsTable from './Table';
@@ -93,6 +88,7 @@ export default {
         VueAdsForm,
         VueAdsFormGroup,
         VueAdsPagination,
+        VueJsonExcel,
     },
 
     props: {
@@ -175,7 +171,7 @@ export default {
                 this.debounceFilterTime
             ),
             exportData: [],
-            exportFields: [],
+            exportFields: {},
             exportTitle: '',
         };
     },
@@ -215,14 +211,6 @@ export default {
     },
 
     methods: {
-        exportExcelFile () {
-            this.collectExportData ();
-            var self = this;
-            console.log('AAAAAAAAA');
-            console.log(this.$refs.testexcel);
-            setTimeout(function () { self.$refs.testexcel.exportExcel(); } , 1000);
-        },
-
         rowsChanged () {
             this.total = this.rows.length;
         },
