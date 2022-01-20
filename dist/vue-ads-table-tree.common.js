@@ -19418,8 +19418,12 @@ var es_date_to_string = __webpack_require__("0d03");
     },
     exportFields: function exportFields() {
       var temp = JSON.parse(JSON.stringify(this.exportColumns));
-      temp.forEach(function (obj, i) {
+      this.exportColumns.forEach(function (obj, i) {
         var row = {};
+
+        if (obj.property == 'date') {
+          console.log(obj);
+        }
 
         if (obj.dataFormat) {
           row = {
