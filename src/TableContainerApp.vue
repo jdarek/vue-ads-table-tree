@@ -249,6 +249,7 @@ export default {
                 title: '',
                 direction: null,
                 filterable: false,
+                export: false,
             },
             {
                 property: 'id',
