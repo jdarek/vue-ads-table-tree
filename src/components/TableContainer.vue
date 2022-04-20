@@ -12,14 +12,6 @@
                 :sheetname="'sheetname'"
             >
             </vue-excel-xlsx>
-            <button
-                @click="exportExcelFile"
-                class="vue-ads-text-white vue-ads-p-2 vue-ads-cursor-pointer vue-ads-rounded-sm vue-ads-bg-teal-500"
-            >
-                <i 
-                    class="fa fa-file-download">
-                </i>
-            </button>
         </slot>
         <vue-ads-table
             ref="table"
