@@ -32,9 +32,6 @@ export default {
 
             this.exportColumns.forEach((obj, i) => {
                 let row = {};
-                if(obj.property == 'date') {
-                    console.log(obj);
-                }
                 if(obj.dataFormat) {
                     row = {
                         label: obj.title,

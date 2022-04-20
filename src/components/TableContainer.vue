@@ -4,7 +4,7 @@
               :filter="filter"
               :filter-changed="filterChanged"
         >
-            <div class="vue-ads-flex vue-ads-py-3">
+            <!-- <div class="vue-ads-flex vue-ads-py-3">
                 <div class="vue-ads-w-3/4"></div>
                 <div class="vue-ads-w-1/4 vue-ads-flex">
                     <vue-ads-form
@@ -14,16 +14,16 @@
                         <vue-ads-form-group>
                             <vue-ads-text :value="filter" placeholder="Filter..." @input="filterChanged" :style="{'min-width': 0}"/>
                         </vue-ads-form-group>
-                    </vue-ads-form>
-                    <vue-excel-xlsx 
-                        ref="testexcel"
-                        :data="exportData"
-                        :columns="exportFields"
-                        :filename="exportTitle"
-                        :sheetname="'sheetname'"
-                    >
-                    </vue-excel-xlsx>
-                    <button
+                    </vue-ads-form> -->
+            <vue-excel-xlsx 
+                ref="testexcel"
+                :data="exportData"
+                :columns="exportFields"
+                :filename="exportTitle"
+                :sheetname="'sheetname'"
+            >
+            </vue-excel-xlsx>
+            <!-- <button
                         @click="exportExcelFile"
                         class="vue-ads-text-white vue-ads-p-2 vue-ads-cursor-pointer vue-ads-rounded-sm vue-ads-bg-teal-500"
                     >
@@ -32,7 +32,7 @@
                         </i>
                     </button>
                 </div>
-            </div>
+            </div> -->
 
         </slot>
         <vue-ads-table
@@ -44,6 +44,8 @@
             :start="start"
             :end="end"
             :classes="classes"
+
+
             :call-rows="callRowsFunction"
             :call-children="callChildrenFunction"
             :call-temp-rows="callTempRowsFunction"
@@ -72,11 +74,6 @@
 </template>
 
 <script>
-import {
-    VueAdsForm,
-    VueAdsFormGroup,
-    VueAdsText,
-} from 'vue-ads-form-builder';
 import VueAdsPagination from 'vue-ads-pagination';
 import debounce from '../services/debounce';
 
@@ -89,9 +86,6 @@ export default {
 
     components: {
         VueAdsTable,
-        VueAdsText,
-        VueAdsForm,
-        VueAdsFormGroup,
         VueAdsPagination,
     },
 
@@ -212,6 +206,10 @@ export default {
         callChildrenFunction () {
             return this.callChildren || (() => []);
         },
+    },
+
+    created () {
+        this.$root.$refs.VueAdsTableRef = this;
     },
 
     methods: {
