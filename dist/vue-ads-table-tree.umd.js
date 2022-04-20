@@ -11837,12 +11837,12 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: ./src/assets/css/tailwind.css
 var tailwind = __webpack_require__("def6");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4b9cdf46-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TableContainer.vue?vue&type=template&id=62560b60&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4b9cdf46-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TableContainer.vue?vue&type=template&id=494dd063&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._t("top",[_c('vue-excel-xlsx',{ref:"testexcel",attrs:{"data":_vm.exportData,"columns":_vm.exportFields,"filename":_vm.exportTitle,"sheetname":'sheetname'}})],{"filter":_vm.filter,"filterChanged":_vm.filterChanged}),_c('vue-ads-table',{ref:"table",attrs:{"columns":_vm.columns,"rows":_vm.rows,"filter":_vm.debouncedFilter,"selectable":_vm.selectable,"start":_vm.start,"end":_vm.end,"classes":_vm.classes,"call-rows":_vm.callRowsFunction,"call-children":_vm.callChildrenFunction,"call-temp-rows":_vm.callTempRowsFunction,"slots":_vm.$scopedSlots,"expanded-column":_vm.expandedColumn},on:{"total-filtered-rows-change":_vm.totalFilteredRowsChanged,"export":_vm.exportTable,"selection-change":_vm.selectionChanged}}),_vm._t("bottom",[_c('vue-ads-pagination',{attrs:{"total-items":_vm.total,"page":_vm.page,"items-per-page":_vm.itemsPerPage},on:{"page-change":_vm.pageChanged,"range-change":_vm.rangeChanged}})],{"total":_vm.total,"page":_vm.page,"itemsPerPage":_vm.itemsPerPage,"pageChanged":_vm.pageChanged,"rangeChanged":_vm.rangeChanged})],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/TableContainer.vue?vue&type=template&id=62560b60&
+// CONCATENATED MODULE: ./src/components/TableContainer.vue?vue&type=template&id=494dd063&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.filter.js
 var es_array_filter = __webpack_require__("4de4");
@@ -11852,6 +11852,9 @@ var es_number_constructor = __webpack_require__("a9e3");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.to-string.js
 var es_object_to_string = __webpack_require__("d3b7");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.promise.js
+var es_promise = __webpack_require__("e6cf");
 
 // EXTERNAL MODULE: ./node_modules/regenerator-runtime/runtime.js
 var runtime = __webpack_require__("96cf");
@@ -12137,9 +12140,6 @@ var es_array_includes = __webpack_require__("caad");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.keys.js
 var es_object_keys = __webpack_require__("b64b");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.promise.js
-var es_promise = __webpack_require__("e6cf");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.regexp.constructor.js
 var es_regexp_constructor = __webpack_require__("4d63");
@@ -14277,30 +14277,7 @@ var Table_component = normalizeComponent(
 
 
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 //
 //
 //

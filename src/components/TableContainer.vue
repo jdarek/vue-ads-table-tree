@@ -4,17 +4,6 @@
               :filter="filter"
               :filter-changed="filterChanged"
         >
-            <!-- <div class="vue-ads-flex vue-ads-py-3">
-                <div class="vue-ads-w-3/4"></div>
-                <div class="vue-ads-w-1/4 vue-ads-flex">
-                    <vue-ads-form
-                        :class="filterClasses"
-                        :style="{'min-width': 0}"
-                    >
-                        <vue-ads-form-group>
-                            <vue-ads-text :value="filter" placeholder="Filter..." @input="filterChanged" :style="{'min-width': 0}"/>
-                        </vue-ads-form-group>
-                    </vue-ads-form> -->
             <vue-excel-xlsx 
                 ref="testexcel"
                 :data="exportData"
@@ -23,17 +12,6 @@
                 :sheetname="'sheetname'"
             >
             </vue-excel-xlsx>
-            <!-- <button
-                        @click="exportExcelFile"
-                        class="vue-ads-text-white vue-ads-p-2 vue-ads-cursor-pointer vue-ads-rounded-sm vue-ads-bg-teal-500"
-                    >
-                        <i 
-                            class="fa fa-file-download">
-                        </i>
-                    </button>
-                </div>
-            </div> -->
-
         </slot>
         <vue-ads-table
             ref="table"
@@ -44,8 +22,6 @@
             :start="start"
             :end="end"
             :classes="classes"
-
-
             :call-rows="callRowsFunction"
             :call-children="callChildrenFunction"
             :call-temp-rows="callTempRowsFunction"
