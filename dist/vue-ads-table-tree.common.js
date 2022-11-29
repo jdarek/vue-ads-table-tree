@@ -13200,11 +13200,24 @@ var es_date_to_string = __webpack_require__("0d03");
       this.exportColumns.forEach(function (obj, i) {
         var row = {};
 
-        if (obj.dataFormat) {
+        if (obj.dataFormat && obj.cellFormat) {
+          row = {
+            label: obj.title,
+            field: obj.property,
+            dataFormat: obj.dataFormat,
+            cellFormat: obj.cellFormat
+          };
+        } else if (obj.dataFormat) {
           row = {
             label: obj.title,
             field: obj.property,
             dataFormat: obj.dataFormat
+          };
+        } else if (obj.cellFormat) {
+          row = {
+            label: obj.title,
+            field: obj.property,
+            cellFormat: obj.cellFormat
           };
         } else {
           row = {
@@ -13405,6 +13418,7 @@ function _slicedToArray(arr, i) {
   }
 });
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/HeaderCell.vue?vue&type=script&lang=js&
+
 
 
 
@@ -13613,6 +13627,7 @@ var Rowvue_type_template_id_e85618f8_staticRenderFns = []
 // CONCATENATED MODULE: ./src/components/Row.vue?vue&type=template&id=e85618f8&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ChildrenButton.vue?vue&type=script&lang=js&
+
 /* harmony default export */ var ChildrenButtonvue_type_script_lang_js_ = ({
   name: 'VueAdsChildrenButton',
   props: {
@@ -13837,6 +13852,7 @@ var Cell_component = normalizeComponent(
 /* harmony default export */ var Cell = (Cell_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Row.vue?vue&type=script&lang=js&
 
+
 //
 //
 //
@@ -13940,6 +13956,7 @@ var GroupRowvue_type_template_id_136acae4_staticRenderFns = []
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GroupCell.vue?vue&type=script&lang=js&
 
 
+
 /* harmony default export */ var GroupCellvue_type_script_lang_js_ = ({
   name: 'VueAdsGroupCell',
   mixins: [cell, sortCell],
@@ -14021,6 +14038,7 @@ var GroupCell_component = normalizeComponent(
 
 /* harmony default export */ var GroupCell = (GroupCell_component.exports);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GroupRow.vue?vue&type=script&lang=js&
+
 
 //
 //

@@ -32,16 +32,29 @@ export default {
 
             this.exportColumns.forEach((obj, i) => {
                 let row = {};
-                if(obj.dataFormat) {
+                if (obj.dataFormat && obj.cellFormat) {
                     row = {
                         label: obj.title,
                         field: obj.property,
                         dataFormat: obj.dataFormat,
+                        cellFormat: obj.cellFormat
+                    };
+                } else if(obj.dataFormat) {
+                    row = {
+                        label: obj.title,
+                        field: obj.property,
+                        dataFormat: obj.dataFormat
+                    };
+                } else if(obj.cellFormat) {
+                    row = {
+                        label: obj.title,
+                        field: obj.property,
+                        cellFormat: obj.cellFormat
                     };
                 } else {
                     row = {
                         label: obj.title,
-                        field: obj.property,
+                        field: obj.property
                     };
                 }
                 
