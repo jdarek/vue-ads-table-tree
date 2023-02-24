@@ -12048,7 +12048,7 @@ var es_number_is_integer = __webpack_require__("8ba4");
       });
     },
     filterColumnProperties: function filterColumnProperties() {
-      return this.visibleColumns.filter(function (column) {
+      return this.columns.filter(function (column) {
         return column.filterable;
       }).map(function (column) {
         return column.property;

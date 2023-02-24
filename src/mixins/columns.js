@@ -51,10 +51,8 @@ export default {
         },
 
         filterColumnProperties () {
-            return this.visibleColumns
-                .filter(column => {
-                    return column.filterable;
-                })
+            return this.columns
+                .filter(column => column.filterable)
                 .map(column => column.property);
         },
     },
